@@ -2,7 +2,6 @@ import Board from './Board';
 import { useState } from 'react';
 import {calculateWinner} from "../Helper"
 import Confetti from 'react-confetti'
-import X from "../assets/X.svg"
 export default function Game ()  {
     
 
@@ -23,19 +22,17 @@ export default function Game ()  {
     
 
 
-    const jumpTo = () => {
-        
-    }
+
     
     const renderMoves = () => ( 
-         <button className="p-4 bg-slate-400 rounded-md text-lg font-bold hover:scale-110" onClick={() => setBoard(Array(9).fill(null))}>
+         <button className="p-4 bg-cyan-900 rounded-md text-lg font-bold hover:scale-110 text-yellow-400 font-bold" onClick={() => setBoard(Array(9).fill(null))}>
         {winner ? "Restart Game" : "Start Game"} </button>
 
     )
     
     return (
        
-        <div className='flex justify-center items-center flex-col gap-4 bg-yellow-200 h-screen'>
+        <div className='flex justify-center items-center flex-col gap-4 bg-stone-100 h-screen'>
         <h1 className='font-bold text-3xl font-mono p-10'>Tic Tac Toe</h1>
         <Board squares={board} onClick={handleClick} />
         <div className='text-center my-auto font-mono'>
